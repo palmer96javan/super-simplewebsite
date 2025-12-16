@@ -1,0 +1,94 @@
+body
+{
+   background-color: #FFFFFF;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+#Layer1
+{
+   background-color: transparent;
+   background-image: none;
+   border-radius: 0px;
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text1 div
+{
+   text-align: center;
+}
+#Shape1
+{
+   border-width: 0;
+   vertical-align: top;
+}
+#Header_1
+{
+   background-color: transparent;
+   background-image: url('../images/modern-abstract-blue-gradient-background_84443-3708.jpg');
+   background-repeat: repeat-x;
+   background-position: center center;
+   border-radius: 0px;
+   box-shadow: 0px 0px 4px #000000;
+}
+#Label1
+{
+   margin: 0;
+   border: 0px solid #CCCCCC;
+   border-radius: 4px;
+   background-color: transparent;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: "Comic Sans MS";
+   font-weight: bold;
+   font-style: normal;
+   font-size: 64px;
+   text-align: center;
+   vertical-align: top;
+   padding: 4px 4px 4px 4px;
+}
+#Label1:focus
+{
+   outline: 0;
+}
+#Header_2
+{
+   background-image: linear-gradient(to bottom, #1257FF 0%, #166AFF 50%, #1D8DFF 50%, #1462FF 100%);
+   border-radius: 0px;
+}
+#wb_TextMenu2
+{
+   background-color: transparent;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   text-decoration: underline;
+   text-transform: none;
+   font-size: 24px;
+   margin: 0;
+   text-align: center;
+   overflow: hidden;
+}
+#wb_TextMenu2 span
+{
+   margin: 0 28px 0 0px;
+}
+#wb_TextMenu2 a
+{
+   color: inherit;
+   text-decoration: inherit;
+}
