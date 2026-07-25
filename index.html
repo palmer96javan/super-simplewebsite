@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javanware | Premium Android Apps Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .app-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .app-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        .filter-btn.active {
+            background-color: #4f46e5;
+            color: white;
+        }
+        .app-icon-squircle {
+            border-radius: 22.5%; /* Official Android Squircle */
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        /* Auto-hide empty AdSense slots */
+        .ad-container {
+            display: none;
+            transition: all 0.3s ease;
+        }
+        .ad-container.has-ad {
+            display: block;
+        }
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-10px);
+        }
+        #mobile-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+    </style>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3940256099942544" crossorigin="anonymous"></script>
+</head>
+<body class="bg-slate-50 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center gap-3 h-20">
+                    <img src="images/logo-banner.png" alt="Javanware Logo Banner" class="h-full w-auto object-contain py-2">
+                    <span class="text-2xl md:text-3xl font-black gradient-text tracking-tighter leading-none">JAVANWARE</span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-slate-900 font-bold border-b-2 border-indigo-600 pb-1">Home</a>
+                    <a href="screenshots.html" class="text-slate-500 hover:text-indigo-600 transition font-medium">Screenshots</a>
+                    <a href="#apps" class="text-slate-500 hover:text-indigo-600 transition font-medium">Portfolio</a>
+                    <a href="#about" class="text-slate-500 hover:text-indigo-600 transition font-medium">Our Story</a>
+                    <a href="#contact" class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-slate-600 hover:text-indigo-600 text-2xl focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 shadow-xl py-6 px-4 space-y-4 flex flex-col items-center">
+            <a href="#" class="text-indigo-600 font-bold text-lg" onclick="toggleMenu()">Home</a>
+            <a href="screenshots.html" class="text-slate-600 font-bold text-lg" onclick="toggleMenu()">Screenshots</a>
+            <a href="#apps" class="text-slate-600 font-bold text-lg" onclick="toggleMenu()">Portfolio</a>
+            <a href="#about" class="text-slate-600 font-bold text-lg" onclick="toggleMenu()">Our Story</a>
+            <a href="#contact" class="w-full text-center bg-indigo-600 text-white py-3 rounded-xl font-bold" onclick="toggleMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-white pt-20 pb-12 md:pt-32 md:pb-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight md:leading-normal" data-aos="fade-up">
+                    Creating <span class="text-indigo-600">Innovative</span><br class="hidden sm:block">Mobile Applications
+                </h1>
+                <p class="mt-8 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    From Jamaica to the world. We build lightweight, powerful, and highly functional Android applications that solve real-world problems.
+                </p>
+                <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#apps" class="w-full sm:w-auto px-10 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200">Explore Apps</a>
+                    <a href="https://play.google.com/store/apps/developer?id=J%C3%A2vanware+-+hobbyist@adventure" target="_blank" class="w-full sm:w-auto px-10 py-4 bg-white text-slate-900 border-2 border-slate-200 rounded-xl font-bold text-lg hover:border-indigo-600 transition-all">Play Store</a>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 md:w-96 md:h-96 bg-indigo-50 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 md:w-96 md:h-96 bg-purple-50 rounded-full blur-3xl opacity-50"></div>
+    </header>
+
+    <!-- AdSense Top -->
+    <div class="ad-container max-w-7xl mx-auto px-4 py-8 text-center overflow-hidden">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3940256099942544"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Apps Section -->
+    <section id="apps" class="py-12 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between lg:items-end mb-16 gap-10">
+                <div class="max-w-2xl">
+                    <h2 class="text-indigo-600 font-bold tracking-widest uppercase text-sm mb-4">Our Published Apps</h2>
+                    <p class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">Digital Excellence Portfolio</p>
+                </div>
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active px-4 md:px-6 py-2 rounded-full border border-slate-200 font-bold text-sm md:text-base transition" onclick="filterApps('all')">All Apps</button>
+                    <button class="filter-btn px-4 md:px-6 py-2 rounded-full border border-slate-200 font-bold text-sm md:text-base transition" onclick="filterApps('utility')">Utilities</button>
+                    <button class="filter-btn px-4 md:px-6 py-2 rounded-full border border-slate-200 font-bold text-sm md:text-base transition" onclick="filterApps('media')">Media</button>
+                    <button class="filter-btn px-4 md:px-6 py-2 rounded-full border border-slate-200 font-bold text-sm md:text-base transition" onclick="filterApps('edu')">Education</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <!-- Zoom Video Pro -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="media" data-aos="fade-up">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/zoom-video-pro.png" alt="Zoom Video Pro Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Premium</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Zoom Video Pro</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">The ultimate ad-free experience for detail-oriented viewers. Advanced playback with 4x magnification.</p>
+                    <a href="apps/zoom-video-pro.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Sentence Dictionary -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="edu" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/sentence-dictionary.png" alt="Sentence Dictionary Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Free</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Sentence Dictionary</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">Massive offline database of 400k+ words. Master English with perfect context through real sentences.</p>
+                    <a href="apps/sentence-dictionary.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Volume Power Premium -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="utility" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/volume-power-pro.png" alt="Volume Power Premium Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Donate</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Volume Power Premium</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">Support our development and unlock the full potential of your device rockers with premium features.</p>
+                    <a href="apps/volume-power-premium.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Mello FM -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="media" data-aos="fade-up">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/mello-fm.png" alt="Mello FM Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Free</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Mello FM Jamaica</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">Broadcast and record your favorite Jamaican hits. Never miss a moment with high-quality AAC recording.</p>
+                    <a href="apps/mello-fm.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Volume Unlock (power button) -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="utility" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/volume-unlock.png" alt="Volume Unlock Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Free</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Volume Unlock</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">The original 'power button' savior. Wake your device with volume keys and save your hardware.</p>
+                    <a href="apps/volume-unlock.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Fyah 105 FM -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="media" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/fyah-fm.png" alt="Fyah 105 FM Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Free</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Fyah 105 FM</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">Jamaica's hit music station in your pocket. Live stream and record reggae, dancehall, and more.</p>
+                    <a href="apps/fyah-fm.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Volume Unlock Premium -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="utility" data-aos="fade-up">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/volume-unlock-pro.png" alt="Volume Unlock Premium Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Donate</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Volume Unlock Prem.</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">Enhanced features and prioritization for users supporting the hobbyist mission of Javanware.</p>
+                    <a href="apps/volume-unlock-premium.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Volume Power Button -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="utility" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/volume-power.png" alt="Volume Power Button Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Free</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Volume Power Button</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">Remap your device rockers to perform essential power functions. Ideal for broken hardware workaround.</p>
+                    <a href="apps/volume-power-button.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+
+                <!-- Zoom Video Player (Free) -->
+                <div class="app-card bg-white rounded-3xl p-8 border border-slate-100 shadow-sm" data-category="media" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mb-6">
+                        <img src="images/icons/zoom-video-classic.png" alt="Zoom Video Player Icon" class="app-icon-squircle w-full h-full">
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-black rounded-full uppercase tracking-tighter mb-4 inline-block">Free</span>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Zoom Video Player</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">The original compact media player for magnification. Pinch-to-zoom for every video format.</p>
+                    <a href="apps/zoom-video-player.html" class="flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">View Details <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Middle -->
+    <div class="ad-container max-w-7xl mx-auto px-4 py-12 text-center overflow-hidden">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3940256099942544"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-indigo-900 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden relative shadow-2xl">
+                <div class="p-8 md:p-24 relative z-10 text-center lg:text-left">
+                    <div class="max-w-3xl">
+                        <h2 class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">Small Team, <br>Global Impact.</h2>
+                        <p class="text-indigo-200 text-lg md:text-xl leading-relaxed mb-12">
+                            Javanware started as a hobbyist venture by Javan Lorenzo Palmer in Jamaica. Today, it stands as a testament to independent development, serving thousands of users who need reliable, lightweight tools that just work.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8 text-white max-w-sm mx-auto lg:mx-0">
+                            <div>
+                                <p class="text-3xl md:text-4xl font-black mb-1">10+</p>
+                                <p class="text-indigo-300 font-bold uppercase tracking-widest text-[10px] md:text-xs">Apps Published</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl md:text-4xl font-black mb-1">400k+</p>
+                                <p class="text-indigo-300 font-bold uppercase tracking-widest text-[10px] md:text-xs">Database Words</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Abstract graphic -->
+                <div class="absolute right-0 bottom-0 translate-y-1/4 translate-x-1/4 w-[20rem] md:w-[40rem] h-[20rem] md:h-[40rem] bg-indigo-800 rounded-full blur-[80px] md:blur-[100px] opacity-30"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-3xl font-black tracking-tighter mb-6 block">JAVANWARE</span>
+                    <p class="text-slate-400 max-w-sm leading-relaxed">Building the future of mobile utility from the heart of Jamaica. Join us on our journey of independent innovation.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Navigation</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Home</a></li>
+                        <li><a href="screenshots.html" class="hover:text-white transition">Screenshots</a></li>
+                        <li><a href="#apps" class="hover:text-white transition">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-widest">Connect</h4>
+                    <p class="text-slate-400 mb-4 font-mono text-sm">PALMER96JAVAN.V19@GMAIL.COM</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-10 text-center text-slate-500 text-xs md:text-sm">
+                <p>&copy; 2026 Javanware - hobbyist@adventure. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Professional AdSense Collapse Logic
+        function monitorAds() {
+            const adContainers = document.querySelectorAll('.ad-container');
+            adContainers.forEach(container => {
+                const ins = container.querySelector('ins.adsbygoogle');
+                if (ins && ins.getAttribute('data-ad-status') === 'filled') {
+                    container.classList.add('has-ad');
+                } else if (ins && ins.innerHTML.trim().length > 0) {
+                    // Fallback for some browsers/ad-blockers
+                    container.classList.add('has-ad');
+                }
+            });
+        }
+        // Check frequently in the first 5 seconds, then stop
+        let checks = 0;
+        const adInterval = setInterval(() => {
+            monitorAds();
+            if (++checks > 20) clearInterval(adInterval);
+        }, 500);
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+            const icon = document.querySelector('#menu-toggle i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        }
+
+        document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
+
+        function filterApps(category) {
+            const cards = document.querySelectorAll('.app-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(btn => btn.classList.remove('active'));
+            // Check if event exists (for script-based calls)
+            if (window.event) window.event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 10);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
