@@ -2,27 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://android-develop-javanware.com/index.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://android-develop-javanware.com/screenshots.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://android-develop-javanware.com/apps/zoom-player-plus.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://android-develop-javanware.com/apps/zoom-player-plus-pro.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://android-develop-javanware.com/privacy-policy.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://android-develop-javanware.com/privacy-policy/com.appzoom.zoomplayerplus.free.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://android-develop-javanware.com/privacy-policy/com.appzoom.zoomplayerplus.pro.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://android-develop-javanware.com/about-us.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://android-develop-javanware.com/contact-us.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
